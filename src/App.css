@@ -1,0 +1,113 @@
+@import url('https://fonts.googleapis.com/css2?family=Orbitron:wght@500&display=swap');
+
+* {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  padding: 0;
+  background: linear-gradient(135deg, #0d0d0d, #1a1a1a);
+  background-image: url('/assets/retro-grid.png'); /* opcional: fondo arcade */
+  background-size: cover;
+  background-repeat: no-repeat;
+  color: #00f0ff;
+  font-family: 'Orbitron', sans-serif;
+  min-height: 100vh;
+}
+
+/* Contenedor principal */
+#root {
+  max-width: 1280px;
+  margin: 0 auto;
+  padding: 2rem;
+  text-align: center;
+  border: 2px dashed #ff2e9a;
+  box-shadow: 0 0 20px #ff2e9a;
+}
+
+/* Títulos */
+h1, h2 {
+  color: #fff700;
+  text-shadow: 0 0 5px #ff2e9a;
+  font-size: clamp(2rem, 5vw, 3rem);
+  margin-bottom: 1rem;
+}
+
+/* Botones */
+button {
+  background-color: #ff2e9a;
+  color: white;
+  border: 2px solid #00f0ff;
+  font-family: 'Orbitron', sans-serif;
+  text-transform: uppercase;
+  padding: 0.6em 1.2em;
+  border-radius: 8px;
+  box-shadow: 0 0 10px #00f0ff;
+  cursor: pointer;
+  transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+button:hover {
+  transform: scale(1.05);
+  box-shadow: 0 0 15px #fff700;
+}
+
+/* Navbar */
+.navbar {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  background-color: #222;
+  padding: 10px 20px;
+  color: #fff;
+  border-bottom: 2px solid #ff2e9a;
+}
+.logo {
+  font-size: 1.5rem;
+  color: #fff700;
+}
+.login-btn, .logout-btn {
+  background-color: #7e00ff;
+  border: none;
+  padding: 8px 12px;
+  border-radius: 4px;
+  color: white;
+  font-weight: bold;
+}
+.login-btn:hover, .logout-btn:hover {
+  background-color: #ff2e9a;
+}
+
+/* Tarjetas de resultados */
+.result-card {
+  background: linear-gradient(145deg, #1a1a1a, #2a2a2a);
+  border: 2px solid #7e00ff;
+  color: #fff;
+  box-shadow: 0 0 10px #7e00ff;
+  border-radius: 12px;
+  padding: 10px;
+}
+.result-card h3 {
+  color: #fff700;
+}
+.result-card p {
+  color: #00f0ff;
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+  #root {
+    padding: 1rem;
+  }
+  h1 {
+    font-size: 2rem;
+  }
+  .navbar {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+  .login-btn, .logout-btn {
+    width: 100%;
+    margin-top: 10px;
+  }
+}

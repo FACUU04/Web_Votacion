@@ -1,0 +1,13 @@
+[
+    { "id": "1", "url": "/fotos/ferrari.jpg", "name": "Ferrari 488"},
+    { "id": "2", "url": "/fotos/mustang.jpg", "name": "Ford Mustang"},
+    { "id": "3", "url": "/fotos/viper.jpg", "name": "Dodge Viper ACR"},
+    { "id": "4", "url": "/fotos/bugatti.jpg", "name": "Bugatti Mistral"},
+    { "id": "5", "url": "/fotos/camaro.jpg", "name": "Chevrolet Camaro"},
+    { "id": "6", "url": "/fotos/challenger.jpg", "name": "Dodge Challenger"},
+    { "id": "7", "url": "/fotos/chiron.jpg", "name": "Bugatti Chiron"},
+    { "id": "8", "url": "/fotos/gt.jpg", "name": "Ford GT"},
+    { "id": "9", "url": "/fotos/lamborghini.jpg", "name": "Lamborghini Revuelto"},
+    { "id": "10", "url": "/fotos/maserati.jpg", "name": "Maserati MC20 cielo"}
+
+]

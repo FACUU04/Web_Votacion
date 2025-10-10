@@ -1,0 +1,220 @@
+.vote-container {
+  text-align: center;
+  padding: 1rem;
+  font-family: 'Orbitron', sans-serif;
+  font-size: clamp(1rem, 2.5vw, 1.2rem);
+  color: #00f0ff;
+}
+
+
+.photo-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(140px, 1fr));
+  gap: 12px;
+  margin-top: 1rem;
+}
+
+
+.photo-card {
+  position: relative;
+  overflow: hidden;
+  border-radius: 10px;
+  cursor: pointer;
+  transition: transform 0.2s ease, box-shadow 0.2s ease;
+  background: linear-gradient(145deg, #1a1a1a, #2a2a2a);
+  border: 2px solid #00f0ff;
+  box-shadow: 0 0 10px #00f0ff;
+}
+
+.photo-card:hover {
+  transform: scale(1.05);
+  box-shadow: 0 0 15px #fff700;
+}
+
+.photo-card img {
+  width: 100%;
+  height: auto;
+  display: block;
+  border-radius: 8px;
+  aspect-ratio: 1 / 1;
+  object-fit: cover;
+}
+
+/* Modal */
+.modal-overlay {
+  position: fixed;
+  inset: 0;
+  background-color: rgba(0, 0, 0, 0.7);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  z-index: 100;
+  padding: 1rem;
+}
+
+.modal {
+  background: #0d0d0d;
+  border-radius: 12px;
+  padding: 20px;
+  text-align: center;
+  max-width: 90%;
+  width: 400px;
+  max-height: 90vh;
+  overflow-y: auto;
+  box-shadow: 0 0 20px #ff2e9a;
+  border: 2px solid #ff2e9a;
+  animation: fadeIn 0.2s ease;
+  color: #00f0ff;
+  font-family: 'Orbitron', sans-serif;
+}
+
+.modal img {
+  width: 100%;
+  border-radius: 10px;
+  margin-bottom: 10px;
+}
+
+/* Botones de votación */
+.vote-buttons {
+  display: flex;
+  justify-content: space-between;
+  margin-top: 10px;
+  flex-wrap: wrap;
+}
+
+.vote-buttons button {
+  flex: 1;
+  margin: 5px;
+  padding: 10px;
+  border-radius: 8px;
+  font-weight: bold;
+  cursor: pointer;
+  font-family: 'Orbitron', sans-serif;
+  text-transform: uppercase;
+  border: 2px solid #fff700;
+  box-shadow: 0 0 8px #fff700;
+  transition: transform 0.2s ease, box-shadow 0.2s ease;
+  color: white;
+}
+
+.vote-buttons button.mejor { background-color: #28a745; }
+.vote-buttons button.gusto { background-color: #ffc107; color: black; }
+.vote-buttons button.peor { background-color: #dc3545; }
+
+.vote-buttons button:hover {
+  transform: scale(1.05);
+  box-shadow: 0 0 12px #ff2e9a;
+}
+
+.vote-buttons button.selected {
+  transform: scale(1.05);
+  box-shadow: 0 0 12px #00f0ff;
+}
+
+.vote-buttons button.already-voted {
+  opacity: 0.5;
+}
+
+/* Botón enviar */
+.submit-vote {
+  margin-top: 15px;
+  padding: 10px 20px;
+  border-radius: 8px;
+  border: 2px solid #00f0ff;
+  background-color: #7e00ff;
+  color: white;
+  font-weight: bold;
+  cursor: pointer;
+  font-family: 'Orbitron', sans-serif;
+  text-transform: uppercase;
+  box-shadow: 0 0 10px #00f0ff;
+  transition: background 0.2s ease, transform 0.2s ease;
+}
+
+.submit-vote:hover {
+  background-color: #ff2e9a;
+  transform: scale(1.05);
+}
+
+/* Mensajes */
+.vote-message {
+  position: fixed;
+  top: 20px;
+  left: 50%;
+  transform: translateX(-50%);
+  padding: 10px 20px;
+  border-radius: 10px;
+  font-weight: bold;
+  color: white;
+  z-index: 200;
+  animation: fadeInOut 3s forwards;
+  font-size: clamp(0.85rem, 2vw, 1rem);
+  font-family: 'Orbitron', sans-serif;
+  box-shadow: 0 0 10px #fff700;
+}
+
+.vote-message.success {
+  background-color: #00f0ff;
+  color: #0d0d0d;
+}
+
+.vote-message.error {
+  background-color: #ff2e9a;
+  color: white;
+}
+
+/* Animaciones */
+@keyframes fadeIn {
+  from { opacity: 0; transform: scale(0.9); }
+  to { opacity: 1; transform: scale(1); }
+}
+
+@keyframes fadeInOut {
+  0% {opacity:0;}
+  10% {opacity:1;}
+  90% {opacity:1;}
+  100% {opacity:0;}
+}
+
+/* Responsive tablets */
+@media (max-width: 768px) {
+  .photo-grid {
+    grid-template-columns: repeat(auto-fill, minmax(120px, 1fr));
+  }
+
+  .modal {
+    width: 95%;
+    padding: 15px;
+  }
+
+  .vote-buttons {
+    flex-direction: column;
+    align-items: stretch;
+  }
+
+  .vote-buttons button {
+    margin: 5px 0;
+  }
+}
+
+/* Responsive celulares pequeños */
+@media (max-width: 480px) {
+  .photo-grid {
+    grid-template-columns: repeat(auto-fill, minmax(100px, 1fr));
+  }
+
+  .modal {
+    padding: 10px;
+    font-size: 0.9rem;
+  }
+
+  .submit-vote {
+    width: 100%;
+    font-size: 0.9rem;
+  }
+
+  .vote-message {
+    font-size: 0.85rem;
+    padding: 8px 16px;
+  }
+}
