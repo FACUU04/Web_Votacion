@@ -29,7 +29,6 @@ function App() {
         onLogout={handleLogout}
       />
 
-      <h1>🎉 Votación </h1>
 
       {mostrarLogin && <LoginModal onLogin={handleLogin} onClose={() => setMostrarLogin(false)} />}
 

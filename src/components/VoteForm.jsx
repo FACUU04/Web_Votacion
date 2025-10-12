@@ -26,6 +26,7 @@ export default function VoteForm({ photos }) {
 
     if (hasVoted) {
       showMessage("Ya votaste. Solo se permite un voto.", "error");
+      setSelectedPhoto(null); // cerrar modal aunque ya haya votado
       return;
     }
 
@@ -35,7 +36,7 @@ export default function VoteForm({ photos }) {
     setHasVoted(true);
 
     showMessage("✅ Voto registrado", "success");
-    setSelectedPhoto(null);
+    setSelectedPhoto(null); // cerrar modal después de votar
   };
 
   return (
