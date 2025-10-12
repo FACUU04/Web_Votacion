@@ -15,7 +15,7 @@
 
 /* Contenido del modal */
 .modal-content {
-  background: #0d0d0d;
+  background: linear-gradient(145deg, #0d0d0d, #1a1a1a);
   padding: 20px;
   border-radius: 12px;
   width: 300px;
@@ -23,16 +23,18 @@
   box-shadow: 0 0 20px #ff2e9a;
   border: 2px solid #ff2e9a;
   text-align: center;
-  font-family: 'Orbitron', sans-serif;
+  font-family: 'Fascinate Inline', cursive;
   color: #00f0ff;
+  animation: fadeIn 0.3s ease;
 }
 
 /* Título */
 .modal-content h2 {
   margin-bottom: 15px;
-  font-size: 1.2rem;
+  font-size: 1.5rem;
   color: #fff700;
-  text-shadow: 0 0 5px #ff2e9a;
+  text-shadow: 0 0 5px #ff2e9a, 0 0 10px #ff2e9a;
+  font-family: 'Fascinate Inline', cursive;
 }
 
 /* Inputs */
@@ -46,6 +48,7 @@
   border: 1px solid #7e00ff;
   border-radius: 6px;
   font-family: 'Orbitron', sans-serif;
+  box-shadow: 0 0 5px #7e00ff;
 }
 
 /* Botones */
@@ -57,8 +60,9 @@
   border: 2px solid #00f0ff;
   border-radius: 6px;
   cursor: pointer;
-  font-family: 'Orbitron', sans-serif;
+  font-family: 'Fascinate Inline', cursive;
   text-transform: uppercase;
+  letter-spacing: 1px;
   box-shadow: 0 0 10px #00f0ff;
   transition: transform 0.2s ease, box-shadow 0.2s ease;
 }
@@ -74,6 +78,12 @@
   border: 2px solid #ff2e9a;
   color: white;
   box-shadow: 0 0 8px #ff2e9a;
+}
+
+/* Animación */
+@keyframes fadeIn {
+  from { opacity: 0; transform: scale(0.9); }
+  to { opacity: 1; transform: scale(1); }
 }
 
 /* Responsive */

@@ -1,4 +1,4 @@
-@import url('https://fonts.googleapis.com/css2?family=Orbitron:wght@500&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Fascinate+Inline&display=swap');
 
 * {
   box-sizing: border-box;
@@ -8,11 +8,13 @@ body {
   margin: 0;
   padding: 0;
   background: linear-gradient(135deg, #0d0d0d, #1a1a1a);
-  background-image: url('/assets/retro-grid.png'); /* opcional: fondo arcade */
-  background-size: cover;
-  background-repeat: no-repeat;
+  background-image: url('/fotos/fondo.jpeg');
+  background-size: cover;          
+  background-repeat: no-repeat;     
+  background-position: center center; 
+  background-attachment: fixed;  
+  font-family: 'Fascinate Inline', cursive;
   color: #00f0ff;
-  font-family: 'Orbitron', sans-serif;
   min-height: 100vh;
 }
 

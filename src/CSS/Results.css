@@ -1,8 +1,9 @@
 .results-container {
   padding: 1rem;
   text-align: center;
-  font-family: Arial, sans-serif;
+  font-family: 'Fascinate Inline', cursive;
   font-size: clamp(1rem, 2.5vw, 1.2rem);
+  color: #00f0ff;
 }
 
 /* Grid de resultados */
@@ -15,16 +16,19 @@
 
 /* Tarjetas de resultados */
 .result-card {
-  background: #fff;
+  background: linear-gradient(145deg, #1a1a1a, #2a2a2a);
+  border: 2px solid #ff2e9a;
   border-radius: 12px;
-  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.15);
+  box-shadow: 0 0 10px #ff2e9a;
   padding: 10px;
   transition: transform 0.2s ease, box-shadow 0.2s ease;
+  animation: fadeInUp 0.4s ease;
+  color: #fff;
 }
 
 .result-card:hover {
-  transform: translateY(-3px);
-  box-shadow: 0 6px 12px rgba(0, 0, 0, 0.2);
+  transform: scale(1.05);
+  box-shadow: 0 0 15px #fff700;
 }
 
 .result-card img {
@@ -36,14 +40,24 @@
 }
 
 .result-card h3 {
+  font-family: 'Fascinate Inline', cursive;
   font-size: 1rem;
   margin: 5px 0;
+  color: #fff700;
+  text-shadow: 0 0 5px #ff2e9a;
 }
 
 .result-card p {
+  font-family: 'Fascinate Inline', cursive;
   margin: 3px 0;
   font-size: 0.9rem;
-  color: #333;
+  color: #00f0ff;
+}
+
+/* Animación de entrada */
+@keyframes fadeInUp {
+  from { opacity: 0; transform: translateY(20px); }
+  to { opacity: 1; transform: translateY(0); }
 }
 
 /* Responsive tablets */

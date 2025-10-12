@@ -1,4 +1,3 @@
-
 .navbar {
   display: flex;
   justify-content: space-between;
@@ -7,17 +6,19 @@
   background-color: #0d0d0d;
   border-bottom: 2px solid #ff2e9a;
   color: #00f0ff;
-  font-family: 'Orbitron', sans-serif;
+  font-family: 'Fascinate Inline', cursive;
   flex-wrap: wrap;
   box-shadow: 0 0 10px #ff2e9a;
+  text-shadow: 0 0 5px #00f0ff;
 }
 
 /* Logo */
 .logo {
-  font-size: 1.5rem;
+  font-size: 2rem;
   font-weight: bold;
   color: #fff700;
-  text-shadow: 0 0 5px #ff2e9a;
+  font-family: 'Fascinate Inline', cursive;
+  text-shadow: 0 0 5px #ff2e9a, 0 0 10px #ff2e9a;
 }
 
 /* Botón de login */
@@ -29,8 +30,9 @@
   border-radius: 6px;
   cursor: pointer;
   font-size: 0.9rem;
-  font-family: 'Orbitron', sans-serif;
+  font-family: 'Fascinate Inline', cursive;
   text-transform: uppercase;
+  letter-spacing: 1px;
   box-shadow: 0 0 8px #00f0ff;
   transition: transform 0.2s ease, box-shadow 0.2s ease;
 }
@@ -48,8 +50,9 @@
   border-radius: 6px;
   cursor: pointer;
   font-size: 0.9rem;
-  font-family: 'Orbitron', sans-serif;
+  font-family: 'Fascinate Inline', cursive;
   text-transform: uppercase;
+  letter-spacing: 1px;
   box-shadow: 0 0 8px #ff2e9a;
   transition: transform 0.2s ease, box-shadow 0.2s ease;
 }

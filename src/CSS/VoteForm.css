@@ -1,11 +1,127 @@
-.vote-container {
-  text-align: center;
-  padding: 1rem;
-  font-family: 'Orbitron', sans-serif;
-  font-size: clamp(1rem, 2.5vw, 1.2rem);
+@import url('https://fonts.googleapis.com/css2?family=Fascinate+Inline&display=swap');
+
+:root {
+  font-family: 'Fascinate Inline', cursive;
+  line-height: 1.5;
+  font-weight: 400;
+  color-scheme: light dark;
+  color: rgba(255, 255, 255, 0.87);
+  background-color: #242424;
+  font-synthesis: none;
+  text-rendering: optimizeLegibility;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  padding: 0;
+  width: 100%;
+  min-height: 100vh;
+  display: block;
+  background: linear-gradient(135deg, #0d0d0d, #1a1a1a);
+  background-image: url('/fotos/fondo.jpeg'); /* ruta corregida */
+  background-size: cover;
+  background-repeat: no-repeat;
+  font-family: 'Fascinate Inline', cursive;
   color: #00f0ff;
 }
 
+/* Contenedor principal */
+#root {
+  max-width: 1280px;
+  margin: 0 auto;
+  padding: 2rem;
+  text-align: center;
+  border: 2px dashed #ff2e9a;
+  box-shadow: 0 0 20px #ff2e9a;
+}
+
+/* Títulos */
+h1, h2 {
+  font-family: 'Fascinate Inline', cursive;
+  color: #fff700;
+  text-shadow: 0 0 5px #ff2e9a, 0 0 10px #ff2e9a;
+  font-size: clamp(2rem, 5vw, 3.2rem);
+  margin-bottom: 1rem;
+  line-height: 1.1;
+}
+
+/* Botones */
+button {
+  font-family: 'Fascinate Inline', cursive;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  background-color: #7e00ff;
+  color: white;
+  border: 2px solid #00f0ff;
+  padding: 0.6em 1.2em;
+  border-radius: 8px;
+  box-shadow: 0 0 10px #00f0ff;
+  cursor: pointer;
+  transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+button:hover {
+  transform: scale(1.05);
+  box-shadow: 0 0 15px #fff700;
+}
+
+/* Navbar */
+.navbar {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  background-color: #222;
+  padding: 10px 20px;
+  color: #fff;
+  border-bottom: 2px solid #ff2e9a;
+}
+.logo {
+  font-family: 'Fascinate Inline', cursive;
+  font-size: 2rem;
+  color: #fff700;
+}
+.login-btn, .logout-btn {
+  background-color: #7e00ff;
+  border: none;
+  padding: 8px 12px;
+  border-radius: 4px;
+  color: white;
+  font-weight: bold;
+}
+.login-btn:hover, .logout-btn:hover {
+  background-color: #ff2e9a;
+}
+
+/* Tarjetas de resultados */
+.result-card {
+  background: linear-gradient(145deg, #1a1a1a, #2a2a2a);
+  border: 2px solid #7e00ff;
+  color: #fff;
+  box-shadow: 0 0 10px #7e00ff;
+  border-radius: 12px;
+  padding: 10px;
+}
+.result-card h3 {
+  font-family: 'Fascinate Inline', cursive;
+  color: #fff700;
+}
+.result-card p {
+  color: #00f0ff;
+}
+
+/* Votación */
+.vote-container {
+  text-align: center;
+  padding: 1rem;
+  font-family: 'Fascinate Inline', cursive;
+  font-size: clamp(1rem, 2.5vw, 1.2rem);
+  color: #00f0ff;
+}
 
 .photo-grid {
   display: grid;
@@ -13,7 +129,6 @@
   gap: 12px;
   margin-top: 1rem;
 }
-
 
 .photo-card {
   position: relative;
@@ -25,12 +140,10 @@
   border: 2px solid #00f0ff;
   box-shadow: 0 0 10px #00f0ff;
 }
-
 .photo-card:hover {
   transform: scale(1.05);
   box-shadow: 0 0 15px #fff700;
 }
-
 .photo-card img {
   width: 100%;
   height: auto;
@@ -51,7 +164,6 @@
   z-index: 100;
   padding: 1rem;
 }
-
 .modal {
   background: #0d0d0d;
   border-radius: 12px;
@@ -65,9 +177,8 @@
   border: 2px solid #ff2e9a;
   animation: fadeIn 0.2s ease;
   color: #00f0ff;
-  font-family: 'Orbitron', sans-serif;
+  font-family: 'Fascinate Inline', cursive;
 }
-
 .modal img {
   width: 100%;
   border-radius: 10px;
@@ -81,7 +192,6 @@
   margin-top: 10px;
   flex-wrap: wrap;
 }
-
 .vote-buttons button {
   flex: 1;
   margin: 5px;
@@ -89,28 +199,24 @@
   border-radius: 8px;
   font-weight: bold;
   cursor: pointer;
-  font-family: 'Orbitron', sans-serif;
+  font-family: 'Fascinate Inline', cursive;
   text-transform: uppercase;
   border: 2px solid #fff700;
   box-shadow: 0 0 8px #fff700;
   transition: transform 0.2s ease, box-shadow 0.2s ease;
   color: white;
 }
-
 .vote-buttons button.mejor { background-color: #28a745; }
 .vote-buttons button.gusto { background-color: #ffc107; color: black; }
 .vote-buttons button.peor { background-color: #dc3545; }
-
 .vote-buttons button:hover {
   transform: scale(1.05);
   box-shadow: 0 0 12px #ff2e9a;
 }
-
 .vote-buttons button.selected {
   transform: scale(1.05);
   box-shadow: 0 0 12px #00f0ff;
 }
-
 .vote-buttons button.already-voted {
   opacity: 0.5;
 }
@@ -125,12 +231,11 @@
   color: white;
   font-weight: bold;
   cursor: pointer;
-  font-family: 'Orbitron', sans-serif;
+  font-family: 'Fascinate Inline', cursive;
   text-transform: uppercase;
   box-shadow: 0 0 10px #00f0ff;
   transition: background 0.2s ease, transform 0.2s ease;
 }
-
 .submit-vote:hover {
   background-color: #ff2e9a;
   transform: scale(1.05);
@@ -149,72 +254,10 @@
   z-index: 200;
   animation: fadeInOut 3s forwards;
   font-size: clamp(0.85rem, 2vw, 1rem);
-  font-family: 'Orbitron', sans-serif;
+  font-family: 'Fascinate Inline', cursive;
   box-shadow: 0 0 10px #fff700;
 }
-
 .vote-message.success {
   background-color: #00f0ff;
-  color: #0d0d0d;
-}
-
-.vote-message.error {
-  background-color: #ff2e9a;
-  color: white;
-}
-
-/* Animaciones */
-@keyframes fadeIn {
-  from { opacity: 0; transform: scale(0.9); }
-  to { opacity: 1; transform: scale(1); }
-}
-
-@keyframes fadeInOut {
-  0% {opacity:0;}
-  10% {opacity:1;}
-  90% {opacity:1;}
-  100% {opacity:0;}
-}
-
-/* Responsive tablets */
-@media (max-width: 768px) {
-  .photo-grid {
-    grid-template-columns: repeat(auto-fill, minmax(120px, 1fr));
+  color: #0d0d0d
   }
-
-  .modal {
-    width: 95%;
-    padding: 15px;
-  }
-
-  .vote-buttons {
-    flex-direction: column;
-    align-items: stretch;
-  }
-
-  .vote-buttons button {
-    margin: 5px 0;
-  }
-}
-
-/* Responsive celulares pequeños */
-@media (max-width: 480px) {
-  .photo-grid {
-    grid-template-columns: repeat(auto-fill, minmax(100px, 1fr));
-  }
-
-  .modal {
-    padding: 10px;
-    font-size: 0.9rem;
-  }
-
-  .submit-vote {
-    width: 100%;
-    font-size: 0.9rem;
-  }
-
-  .vote-message {
-    font-size: 0.85rem;
-    padding: 8px 16px;
-  }
-}
