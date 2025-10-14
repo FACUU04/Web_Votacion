@@ -23,10 +23,11 @@ body {
   width: 100%;
   min-height: 100vh;
   display: block;
-  background: linear-gradient(135deg, #0d0d0d, #1a1a1a);
-  background-image: url('/fotos/fondo.jpeg'); /* ruta corregida */
+  background: url('/fotos/fondo.jpeg');
   background-size: cover;
+  background-position: center;
   background-repeat: no-repeat;
+  background-attachment: fixed;
   font-family: 'Fascinate Inline', cursive;
   color: #00f0ff;
 }
@@ -37,8 +38,8 @@ body {
   margin: 0 auto;
   padding: 2rem;
   text-align: center;
-  border: 2px dashed #ff2e9a;
-  box-shadow: 0 0 20px #ff2e9a;
+  border: none; 
+ 
 }
 
 /* Títulos */
@@ -206,9 +207,7 @@ button:hover {
   transition: transform 0.2s ease, box-shadow 0.2s ease;
   color: white;
 }
-.vote-buttons button.mejor { background-color: #28a745; }
-.vote-buttons button.gusto { background-color: #ffc107; color: black; }
-.vote-buttons button.peor { background-color: #dc3545; }
+
 .vote-buttons button:hover {
   transform: scale(1.05);
   box-shadow: 0 0 12px #ff2e9a;
@@ -260,29 +259,4 @@ button:hover {
   font-weight: bold;
   padding: 20px;
   text-align: center;
-  border-radius: 12px;
-}
-
-/* Éxito: verde vibrante */
-.vote-message.success {
-  background-color: #00ff88;
-  color: #0d0d0d;
-  border: 2px solid #00ff88;
-  box-shadow: 0 0 20px #00ff88;
-}
-
-/* Error: rosa fuerte */
-.vote-message.error {
-  background-color: #ff2e9a;
-  color: #ffffff;
-  border: 2px solid #ff2e9a;
-  box-shadow: 0 0 20px #ff2e9a;
-}
-
-/* Animación suave */
-@keyframes fadeInOut {
-  0% { opacity: 0; transform: scale(0.9); }
-  10% { opacity: 1; transform: scale(1); }
-  90% { opacity: 1; transform: scale(1); }
-  100% { opacity: 0; transform: scale(0.9); }
-}
+ }
