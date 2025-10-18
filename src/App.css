@@ -7,22 +7,29 @@
 body {
   margin: 0;
   padding: 0;
-  background: linear-gradient(135deg, #0d0d0d, #1a1a1a);
-  background-image: url('/fotos/fondo.jpeg');
-  background-size: cover;          
-  background-repeat: no-repeat;     
-  background-position: center center; 
-  background-attachment: fixed;  
   font-family: 'Fascinate Inline', cursive;
   color: #00f0ff;
   min-height: 100vh;
+  position: relative;
+  background: linear-gradient(135deg, #0d0d0d, #1a1a1a);
+  overflow-x: hidden;
 }
 
-@media (max-width: 768px) {
-  body {
-    background-attachment: scroll;
-  }
+body::before {
+  content: "";
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-image: url('/fotos/fondo.jpeg');
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position: center center;
+  z-index: -1;
+  opacity: 1;
 }
+
 
 /* Contenedor principal */
 #root {
