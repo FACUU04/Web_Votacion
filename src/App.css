@@ -18,6 +18,12 @@ body {
   min-height: 100vh;
 }
 
+@media (max-width: 768px) {
+  body {
+    background-attachment: scroll;
+  }
+}
+
 /* Contenedor principal */
 #root {
   max-width: 1280px;
