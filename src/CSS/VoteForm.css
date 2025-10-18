@@ -17,22 +17,33 @@
   box-sizing: border-box;
 }
 
-body {
+bbody {
   margin: 0;
   padding: 0;
   width: 100%;
   min-height: 100vh;
   display: block;
-  background: url('/fotos/fondo.jpeg');
-  background-size: cover;
-  background-position: center;
-  background-repeat: no-repeat;
-  background-attachment: fixed;
+  background: none; /* quitamos el fondo directo */
   font-family: 'Fascinate Inline', cursive;
   color: #00f0ff;
+  position: relative; /* necesario para el pseudo-elemento */
+  overflow-x: hidden;
 }
 
-/* Contenedor principal */
+/* Fondo fijo y suave compatible con todos los dispositivos */
+body::before {
+  content: "";
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: url('/fotos/fondo.jpeg') center center / cover no-repeat;
+  z-index: -1;
+  will-change: transform; /* mejora el rendimiento en móviles */
+  transform: translateZ(0); /* previene saltos */
+}
+
 #root {
   max-width: 1280px;
   margin: 0 auto;
@@ -42,7 +53,6 @@ body {
  
 }
 
-/* Títulos */
 h1, h2 {
   font-family: 'Fascinate Inline', cursive;
   color: #fff700;
@@ -52,7 +62,6 @@ h1, h2 {
   line-height: 1.1;
 }
 
-/* Botones */
 button {
   font-family: 'Fascinate Inline', cursive;
   text-transform: uppercase;
@@ -71,7 +80,6 @@ button:hover {
   box-shadow: 0 0 15px #fff700;
 }
 
-/* Navbar */
 .navbar {
   display: flex;
   justify-content: space-between;
@@ -98,7 +106,6 @@ button:hover {
   background-color: #ff2e9a;
 }
 
-/* Tarjetas de resultados */
 .result-card {
   background: linear-gradient(145deg, #1a1a1a, #2a2a2a);
   border: 2px solid #7e00ff;
@@ -115,7 +122,6 @@ button:hover {
   color: #00f0ff;
 }
 
-/* Votación */
 .vote-container {
   text-align: center;
   padding: 1rem;
@@ -154,7 +160,6 @@ button:hover {
   object-fit: cover;
 }
 
-/* Modal */
 .modal-overlay {
   position: fixed;
   inset: 0;
@@ -186,7 +191,6 @@ button:hover {
   margin-bottom: 10px;
 }
 
-/* Botones de votación */
 .vote-buttons {
   display: flex;
   justify-content: space-between;
@@ -220,7 +224,6 @@ button:hover {
   opacity: 0.5;
 }
 
-/* Botón enviar */
 .submit-vote {
   margin-top: 15px;
   padding: 10px 20px;
@@ -240,7 +243,6 @@ button:hover {
   transform: scale(1.05);
 }
 
-/* Mensajes flotantes  */
 .vote-message {
   position: fixed;
   top: 0;

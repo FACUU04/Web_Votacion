@@ -3,6 +3,7 @@ import VoteForm from "./components/VoteForm";
 import Results from "./components/Results";
 import LoginModal from "./components/Login";
 import Navbar from "./components/Navbar";
+import Footer from "./components/Footer";
 import { useState } from "react";
 
 function App() {
@@ -29,14 +30,17 @@ function App() {
         onLogout={handleLogout}
       />
 
-
-      {mostrarLogin && <LoginModal onLogin={handleLogin} onClose={() => setMostrarLogin(false)} />}
+      {mostrarLogin && (
+        <LoginModal onLogin={handleLogin} onClose={() => setMostrarLogin(false)} />
+      )}
 
       {showResults && autenticado ? (
         <Results photos={photos} />
       ) : (
         <VoteForm photos={photos} />
       )}
+
+      <Footer />
     </div>
   );
 }
