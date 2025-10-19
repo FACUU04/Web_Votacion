@@ -1,11 +1,11 @@
 [
     { "id": "1", "url": "/fotos/Analia J.jpeg", "name": "Analia"},
-    { "id": "2", "url": "/fotos/Daniel N.jpeg", "name": "Daniel"},
+    { "id": "2", "url": "/fotos/Alvaro.jpeg", "name": "Alvaro"},
     { "id": "3", "url": "/fotos/Daniela.jpeg", "name": "Daniela"},
     { "id": "4", "url": "/fotos/Emanuel.jpeg", "name": "Manuel"},
     { "id": "5", "url": "/fotos/Facu.jpeg", "name": "Facundo"},
     { "id": "6", "url": "/fotos/Franco.jpeg", "name": "Franco"},
-    { "id": "7", "url": "/fotos/Karina.jpeg", "name": "Carina"},
+    { "id": "7", "url": "/fotos/Carla.jpeg", "name": "Carla"},
     { "id": "8", "url": "/fotos/Kevin.jpeg", "name": "Kevin (TwoKingUnited)"},
     { "id": "9", "url": "/fotos/Maria.jpeg", "name": "Maria"},
     { "id": "10", "url": "/fotos/Mariela.jpeg", "name": "Mariela"},
@@ -26,7 +26,26 @@
     { "id": "25", "url": "/fotos/Anahi.jpeg", "name": "Anahi"},
     { "id": "26", "url": "/fotos/Melina C.jpeg", "name": "Melina"},
     { "id": "27", "url": "/fotos/Cintia.jpeg", "name": "Cintia"},
-    { "id": "28", "url": "/fotos/David.jpeg", "name": "David"}
-
-
+    { "id": "28", "url": "/fotos/David.jpeg", "name": "David"},
+    { "id": "29", "url": "/fotos/Karina.jpeg", "name": "Carina"},
+    { "id": "30", "url": "/fotos/Daniel N.jpeg", "name": "Daniel"},
+    { "id": "31", "url": "/fotos/Mariana Falcon.jpeg", "name": "Falcon"},
+    { "id": "32", "url": "/fotos/Villalba.jpeg", "name": "Villalba"},
+    { "id": "33", "url": "/fotos/Jonny y Cristian.jpeg", "name": "Jonny y Cristian"},
+    { "id": "34", "url": "/fotos/Nicolas.jpeg", "name": "Nicoo"},
+    { "id": "35", "url": "/fotos/Cristian.jpeg", "name": "Cristian"},
+    { "id": "36", "url": "/fotos/Roxana.jpeg", "name": "Roxana"},
+    { "id": "37", "url": "/fotos/Romina M.jpeg", "name": "Romina"},
+    { "id": "38", "url": "/fotos/Rafael y norberto.jpeg", "name": "Norberto y Rafael"},
+    { "id": "39", "url": "/fotos/Mirta.jpeg", "name": "Mirta"},
+    { "id": "40", "url": "/fotos/Olivia.jpeg", "name": "Olivia"},
+    { "id": "41", "url": "/fotos/Falcon jr.jpeg", "name": "Falcon Jr"},
+    { "id": "42", "url": "/fotos/Selene.jpeg", "name": "Selene"},
+    { "id": "43", "url": "/fotos/Denzel.jpeg", "name": "Denzel"},
+    { "id": "44", "url": "/fotos/Eusebia.jpeg", "name": "Eusebia"},
+    { "id": "45", "url": "/fotos/Tamara.jpeg", "name": "Tamara"},
+    { "id": "46", "url": "/fotos/Iara.jpeg", "name": "Iara"},
+    { "id": "47", "url": "/fotos/Tizi.jpeg", "name": "Tizi"},
+    { "id": "48", "url": "/fotos/Matias M.jpeg", "name": "Matias"},
+    { "id": "49", "url": "/fotos/Romina M.jpeg", "name": "Romina"}
 ]
