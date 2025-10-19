@@ -10,7 +10,7 @@ export default function VoteForm({ photos }) {
   const VOTE_LIMIT = 3; // 🔹 límite máximo de votos
 
   useEffect(() => {
-    const storedVotes = localStorage.getItem("userVotes");
+    const storedVotes = localStorage.getItem("userVotes1");
     if (storedVotes) {
       const voteCount = parseInt(storedVotes, 10);
       if (voteCount >= VOTE_LIMIT) setHasVoted(true);
@@ -23,7 +23,7 @@ export default function VoteForm({ photos }) {
   };
 
   const handleSubmitVote = async () => {
-    const storedVotes = localStorage.getItem("userVotes");
+    const storedVotes = localStorage.getItem("userVotes1");
     const currentCount = storedVotes ? parseInt(storedVotes, 10) : 0;
 
     if (!selectedPhoto) {
@@ -43,7 +43,7 @@ export default function VoteForm({ photos }) {
 
       // Guardar nuevo conteo en localStorage
       const newCount = currentCount + 1;
-      localStorage.setItem("userVotes", newCount);
+      localStorage.setItem("userVotes1", newCount);
 
       if (newCount >= VOTE_LIMIT) setHasVoted(true);
 
