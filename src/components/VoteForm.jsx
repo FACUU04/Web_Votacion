@@ -7,10 +7,14 @@ export default function VoteForm({ photos }) {
   const [selectedPhoto, setSelectedPhoto] = useState(null);
   const [hasVoted, setHasVoted] = useState(false);
   const [message, setMessage] = useState({ text: "", type: "" });
+  const VOTE_LIMIT = 3; // 🔹 límite máximo de votos
 
   useEffect(() => {
-    const storedVote = localStorage.getItem("userVote");
-    if (storedVote) setHasVoted(true);
+    const storedVotes = localStorage.getItem("userVotes");
+    if (storedVotes) {
+      const voteCount = parseInt(storedVotes, 10);
+      if (voteCount >= VOTE_LIMIT) setHasVoted(true);
+    }
   }, []);
 
   const showMessage = (text, type = "success") => {
@@ -19,24 +23,37 @@ export default function VoteForm({ photos }) {
   };
 
   const handleSubmitVote = async () => {
+    const storedVotes = localStorage.getItem("userVotes");
+    const currentCount = storedVotes ? parseInt(storedVotes, 10) : 0;
+
     if (!selectedPhoto) {
       showMessage("Elegí una foto antes de votar.", "error");
       return;
     }
 
-    if (hasVoted) {
-      showMessage("Ya votaste. Solo se permite un voto.", "error");
-      setSelectedPhoto(null); // cerrar modal aunque ya haya votado
+    if (currentCount >= VOTE_LIMIT) {
+      showMessage(`Ya alcanzaste el límite de ${VOTE_LIMIT} votos.`, "error");
+      setSelectedPhoto(null);
       return;
     }
 
-    const voteData = { mejor: selectedPhoto.id };
-    await addDoc(collection(db, "votes"), voteData);
-    localStorage.setItem("userVote", selectedPhoto.id);
-    setHasVoted(true);
+    try {
+      const voteData = { mejor: selectedPhoto.id };
+      await addDoc(collection(db, "votes"), voteData);
 
-    showMessage("✅ Voto registrado", "success");
-    setSelectedPhoto(null); // cerrar modal después de votar
+      // Guardar nuevo conteo en localStorage
+      const newCount = currentCount + 1;
+      localStorage.setItem("userVotes", newCount);
+
+      if (newCount >= VOTE_LIMIT) setHasVoted(true);
+
+      showMessage(`✅ Voto ${newCount} de ${VOTE_LIMIT} registrado`, "success");
+    } catch (error) {
+      console.error("Error al registrar el voto:", error);
+      showMessage("Error al registrar el voto. Intentá de nuevo.", "error");
+    }
+
+    setSelectedPhoto(null);
   };
 
   return (
@@ -64,6 +81,7 @@ export default function VoteForm({ photos }) {
             <button
               className={`submit-vote ${hasVoted ? "already-voted" : ""}`}
               onClick={handleSubmitVote}
+              disabled={hasVoted}
             >
               🥇 Votar como Mejor
             </button>

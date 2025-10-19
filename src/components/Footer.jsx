@@ -6,8 +6,9 @@ const Footer = () => {
 
   const manejarReset = () => {
     const clave = prompt("🔐 Ingresá la contraseña para resetear el voto:");
-    if (clave === "fiesta1980") {
-      localStorage.removeItem("yaVoto");
+    if (clave === "facundo") {
+      localStorage.removeItem("userVotes");
+      setHasVoted(false);
       setMensaje("✅ Voto reseteado en este dispositivo.");
     } else {
       setMensaje("❌ Contraseña incorrecta.");

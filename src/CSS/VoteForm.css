@@ -17,20 +17,19 @@
   box-sizing: border-box;
 }
 
-bbody {
+body {
   margin: 0;
   padding: 0;
   width: 100%;
   min-height: 100vh;
   display: block;
-  background: none; /* quitamos el fondo directo */
+  background: none; 
   font-family: 'Fascinate Inline', cursive;
   color: #00f0ff;
-  position: relative; /* necesario para el pseudo-elemento */
+  position: relative; 
   overflow-x: hidden;
 }
 
-/* Fondo fijo y suave compatible con todos los dispositivos */
 body::before {
   content: "";
   position: fixed;
@@ -262,3 +261,4 @@ button:hover {
   padding: 20px;
   text-align: center;
  }
+ 
